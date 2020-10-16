@@ -33,47 +33,58 @@ class _MovieAppState extends State<MovieApp> {
       price: 32,
     ),
   ];
+
+  Movie _selectedMovie;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        '/empty-page': (BuildContext context) => MovieEmptyDetail(),
-        '/with-sent-data': (BuildContext context) => MovieDetailWithArguments()
-      },
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Movies'),
-        ),
-        body: ListView.builder(
-          key: Key('movie-list'),
-          itemCount: movies.length,
-          itemBuilder: (BuildContext builderContext, int position) => ListTile(
-            key: Key(movies[position].title),
-            title: Text(movies[position].title),
-            subtitle: Text(
-              'Price: ${movies[position].price.toString()}',
-            ),
-            onTap: () {
-              if (position.isEven) {
-                Navigator.push(
-                  builderContext,
-                  MaterialPageRoute(
-                    builder: (_) => MovieDetailInjectedData(
-                      movies[position],
-                    ),
-                  ),
-                );
-              } else {
-                Navigator.pushNamed(
-                  builderContext,
-                  '/with-sent-data',
-                  arguments: movies[position],
-                );
-              }
-            },
+      home: Navigator(
+        pages: [
+          MaterialPage(
+            key: ValueKey('movie-list-main-page'),
+            child: MovieListMainPage(movies, selectMovie),
           ),
-        ),
+          if (_selectedMovie != null)
+            BookDetailsPage(
+              movie: _selectedMovie,
+            ),
+        ],
+        onPopPage: (route, result) {
+          if (!route.didPop(result)) {
+            return false;
+          }
+
+          setState(() {
+            _selectedMovie = null;
+          });
+
+          return true;
+        },
       ),
+    );
+  }
+
+  void selectMovie(Movie movie) {
+    setState(() {
+      _selectedMovie = movie;
+    });
+  }
+}
+
+class BookDetailsPage extends Page {
+  final Movie movie;
+
+  BookDetailsPage({
+    this.movie,
+  }) : super(key: ValueKey(movie.title));
+
+  Route createRoute(BuildContext context) {
+    return MaterialPageRoute(
+      settings: this,
+      builder: (BuildContext context) {
+        return MovieDetailInjectedData(movie);
+      },
     );
   }
 }
@@ -146,6 +157,32 @@ class MovieDetailWithArguments extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class MovieListMainPage extends StatelessWidget {
+  final List<Movie> movies;
+  final ValueChanged<Movie> onItemClicked;
+  const MovieListMainPage(this.movies, this.onItemClicked);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Movies'),
+      ),
+      body: ListView.builder(
+        key: Key('movie-list'),
+        itemCount: movies.length,
+        itemBuilder: (BuildContext builderContext, int position) => ListTile(
+          key: Key(movies[position].title),
+          title: Text(movies[position].title),
+          subtitle: Text(
+            'Price: ${movies[position].price.toString()}',
+          ),
+          onTap: () => onItemClicked(movies[position]),
         ),
       ),
     );
