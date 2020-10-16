@@ -1,11 +1,18 @@
+import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:testing_example_movie_app/movie/data/movie.dart';
 import 'package:testing_example_movie_app/movie/data/movie_repository.dart';
+import 'package:testing_example_movie_app/movie/data/purchase_result.dart';
+
+class MockMovieRepository extends Mock implements MovieRepository {}
 
 void main() {
   MovieRepository _movieRepository;
+  MockMovieRepository _mockMovieRepository;
+
   setUp(() {
     _movieRepository = MovieRepository(totalMoney: 20);
+    _mockMovieRepository = MockMovieRepository();
   });
 
   group('Ticket buying operation', () {
@@ -37,6 +44,27 @@ void main() {
     'Fetching Movies',
     () async {
       expect(await _movieRepository.fetchMovies(), hasLength(5));
+    },
+  );
+
+  test(
+    'Fetching Movies mockito',
+    () async {
+      final movie = Movie(
+        price: 24,
+        title: 'The Last Dance',
+      );
+      when(_mockMovieRepository.buyTicket(movie)).thenReturn(
+        PurchaseResult(
+          result: true,
+          remainingMoney: 14,
+        ),
+      );
+
+      expect(_mockMovieRepository.buyTicket(movie), isNotNull);
+      final result = _mockMovieRepository.buyTicket(movie);
+      expect(result.result, isTrue);
+      expect(result.remainingMoney, 14);
     },
   );
 
