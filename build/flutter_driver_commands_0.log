@@ -1,0 +1,67 @@
+2020-10-16 10:16:41.681561 >>> {command: get_health}
+2020-10-16 10:16:42.238236 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:16:42.243887 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:16:44.123886 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:16:44.125601 >>> {command: get_text, finderType: ByValueKey, keyValueString: remaining-money-indicator, keyValueType: String}
+2020-10-16 10:16:44.146551 <<< {isError: true, response: Uncaught extension error while executing get_text: Unsupported operation: Type FloatingActionButton is currently not supported by getText
+#0      FlutterDriverExtension._getText (package:flutter_driver/src/extension/extension.dart:644:7)
+<asynchronous suspension>
+#1      FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:270:53)
+#2      BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:547:32)
+<asynchronous suspension>
+#3      BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart)
+#4      _runExtension (dart:developer-patch/developer.dart:84:23)
+, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:18:52.547056 >>> {command: get_health}
+2020-10-16 10:18:53.162721 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:18:53.168291 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:18:55.031311 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:18:55.034013 >>> {command: get_text, finderType: ByText, text: Remaining Money: 100.0}
+2020-10-16 10:18:55.050322 <<< {isError: false, response: {text: Remaining Money: 100.0}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:28:10.443060 >>> {command: get_health}
+2020-10-16 10:28:10.992563 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:28:10.997948 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:28:12.857678 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:28:48.038159 >>> {command: get_health}
+2020-10-16 10:28:48.619991 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:28:48.626085 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:28:50.480116 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:30:44.515870 >>> {command: get_health}
+2020-10-16 10:30:45.085602 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:30:45.091174 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:30:46.956549 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:30:46.958979 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:31:27.103257 >>> {command: get_health}
+2020-10-16 10:31:27.660322 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:31:27.666385 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:31:29.547743 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:31:29.549812 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:32:22.967375 >>> {command: get_health}
+2020-10-16 10:32:23.535679 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:32:23.541416 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:32:25.399454 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:32:25.401521 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:33:14.233966 >>> {command: get_health}
+2020-10-16 10:33:14.817279 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:33:14.822820 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:33:16.680749 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:33:16.682811 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:33:16.693578 <<< {isError: false, response: {text: The Last Black Man in San Francisco}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:40:14.369203 >>> {command: get_health}
+2020-10-16 10:40:14.869392 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:40:14.874894 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:40:16.763785 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:40:16.765649 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:40:16.776653 <<< {isError: false, response: {text: The Last Black Man in San Francisco}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:42:24.672853 >>> {command: get_health}
+2020-10-16 10:42:25.256377 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:42:25.261694 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:42:27.108654 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:42:27.110462 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:42:27.121897 <<< {isError: false, response: {text: The Last Black Man in San Francisco}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:47:09.992827 >>> {command: get_health}
+2020-10-16 10:47:10.660116 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:47:10.666993 >>> {command: waitFor, finderType: ByValueKey, keyValueString: movie-list, keyValueType: String}
+2020-10-16 10:47:12.536901 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2020-10-16 10:47:12.539119 >>> {command: get_text, finderType: ByText, text: The Last Black Man in San Francisco}
+2020-10-16 10:47:12.554011 <<< {isError: false, response: {text: The Last Black Man in San Francisco}, type: _extensionType, method: ext.flutter.driver}
